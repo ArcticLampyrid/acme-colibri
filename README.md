@@ -56,3 +56,7 @@ pnpm run typecheck
 ```
 
 Behavior is specified in [spec/](spec/README.md); contributor notes are in [AGENTS.md](AGENTS.md).
+
+## License
+
+[MIT](LICENSE)
