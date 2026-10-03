@@ -1,6 +1,6 @@
 # acme-colibri
 
-An [acmeproxy](https://github.com/mdbraber/acmeproxy)-compatible ACME DNS-01 proxy that runs on Cloudflare Workers. ACME clients (Lego, …) get a scoped **Access ID + Key** instead of your DNS provider credentials; the proxy checks which domains that key may touch and forwards the TXT record change to the DNS provider (Cloudflare for now).
+An [acmeproxy](https://github.com/mdbraber/acmeproxy)-compatible ACME DNS-01 proxy that runs on Cloudflare Workers. ACME clients (Lego, Caddy, Certbot, acme.sh, cert-manager.io, …) get a scoped **Access ID + Key** instead of your DNS provider credentials; the proxy checks which domains that key may touch and forwards the TXT record change to the DNS provider (Cloudflare for now).
 
 - Works with the acmeproxy protocol and Lego's `httpreq` provider (standard and raw mode)
 - Per-client access points limited to domain suffixes, `_acme-challenge` TXT records only
@@ -43,7 +43,7 @@ HTTPREQ_PASSWORD=<access key> \
 lego --dns httpreq -d example.com -d '*.example.com' -m you@example.com run
 ```
 
-The create/rotate dialog includes setup examples for Lego, Caddy, Certbot, acme.sh, and cert-manager.io. Caddy uses its ACMEProxy DNS module, Certbot uses the `certbot-httpreq` plugin, and cert-manager.io uses Saturn Cloud's HTTPREQ webhook; all adapters send `POST /present` and `POST /cleanup` with HTTP Basic auth.
+The create/rotate dialog includes setup examples for most ACME clients, you'll get detailed guidance there.
 
 ## Develop
 
