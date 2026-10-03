@@ -1,0 +1,8 @@
+# Copy to .dev.vars (git-ignored). Use single quotes so '$' is not expanded.
+SECRET_KEY='replace-with-at-least-32-random-characters'
+# Passcode mode: the admin password in cleartext
+ADMIN_PASSWORD='replace-with-a-long-random-password'
+# OIDC mode (takes precedence when OIDC_ISSUER is set):
+# OIDC_ISSUER='https://idp.example.com'
+# OIDC_CLIENT_ID='acme-colibri'
+# OIDC_CLIENT_SECRET='...'
